@@ -4,11 +4,47 @@ html, body {
     background-color: lightgreen;
 }
 
-.my-api {
-    display: grid;
+.my-apis {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.my-api-name {}
-.my-api-description {}
-.my-api-auth {}
-.my-api-https {}
+.my-api {
+    display: grid;
+    grid-template: 3rem 1rem 4rem 3rem / repeat(3, 1fr);
+    grid-template-areas: 
+        "title title title"
+        "..... ..... ....."
+        "descr descr descr"
+        "auth  ..... https";
+    background-color: lightblue;
+    margin: 1em;
+    border-radius: 10px;
+}
+
+.my-api > * {
+    text-align: center;
+}
+
+.my-api-name {
+    grid-area: title;
+    font-size: 1.4rem;
+}
+
+.my-api-description {
+    grid-area: descr;
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    overflow: auto;
+}
+
+.my-api-auth {
+    grid-area: auth;
+    font-size: 1.4rem;
+}
+
+.my-api-https {
+    grid-area: https;
+    font-size: 1.4rem;
+}

@@ -34,10 +34,10 @@ function getAPIhtml(myAPI) {
     return `
         <div class="my-api">
             <div class="my-api-name">
-                <a href="${myAPI.Link}">${myAPI.API} (${myAPI.Category})</a>
+                <a href="${myAPI.Link}" target="_blank">${myAPI.API} (${myAPI.Category})</a>
             </div>
             <div class="my-api-description">${myAPI.Description}</div>
-            <div class="my-api-auth">Auth: ${myAPI.Auth}</div>
+            <div class="my-api-auth">Auth: ${myAPI.Auth ? myAPI.Auth : 'none'}</div>
             <div class="my-api-https">HTTPS? ${myAPI.HTTPS}</div>
         </div>
     `;
@@ -45,7 +45,7 @@ function getAPIhtml(myAPI) {
 
 function displayAPIs(myAPIs) {
     document.body.innerHTML = `
-        <div class="my-apis>"
+        <div class="my-apis">
             ${myAPIs.map(getAPIhtml).join('')}
         </div>
     `;
